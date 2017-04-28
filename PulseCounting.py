@@ -10,7 +10,7 @@ import os
 from gpiozero import DigitalInputDevice
 
 ELEC_DELTA = 0
-ELEC_GPIO =
+ELEC_GPIO = 4
 ELEC_COUNTER_LOCK = threading.Lock()
 ELEC_LAST_TIME = 0
 ELEC_POST_TIME = 0
