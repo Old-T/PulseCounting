@@ -10,7 +10,6 @@ import os
 from gpiozero import DigitalInputDevice
 
 ELEC_DELTA = 0
-ELEC_IDX =
 ELEC_GPIO =
 ELEC_COUNTER_LOCK = threading.Lock()
 ELEC_LAST_TIME = 0
@@ -44,7 +43,7 @@ def main():
 
     while True:
         try:
-            res = json.load(urllib2.urlopen(GET_URL % ELEC_IDX))
+            #res = json.load(urllib2.urlopen(GET_URL % ELEC_IDX))
             if res['status'] != 'OK':
                 raise Exception('Domoticz json error')
             break
@@ -79,7 +78,7 @@ def main():
 
         if ELEC_LOAD != 0:
             try:
-                res = json.load(urllib2.urlopen((SET_URL + ';%d') % (ELEC_IDX, int(ELEC_LOAD), ELEC_COUNTER)))
+                #res = json.load(urllib2.urlopen((SET_URL + ';%d') % (ELEC_IDX, int(ELEC_LOAD), ELEC_COUNTER)))
                 if res['status'] != 'OK':
                     raise Exception('Domoticz json error')
                 logging.info('Elec load %.2f counter %d' % (ELEC_LOAD, ELEC_COUNTER))
